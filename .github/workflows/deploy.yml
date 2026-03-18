@@ -3,8 +3,6 @@ name: Build and Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -26,11 +24,11 @@ jobs:
       with:
         name: html-output
         path: dist/
+        retention-days: 1
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     
     permissions:
       contents: read
@@ -46,6 +44,10 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: html-output
+        path: .
+    
+    - name: List files
+      run: ls -la
     
     - name: Setup Pages
       uses: actions/configure-pages@v4
