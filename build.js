@@ -183,8 +183,8 @@ function generateNav(files, currentFilePath = '') {
   
   for (const file of files) {
     const { relativePath, outputPath, title } = file;
-    // 使用绝对路径（以 / 开头）避免相对路径问题
-    const linkPath = '/' + outputPath;
+    // 使用绝对路径（以 /guide/ 开头）避免相对路径问题
+    const linkPath = '/guide/' + outputPath;
     const link = `<a href="${linkPath}">${title}</a>`;
     
     if (relativePath.startsWith('workspace-backup/')) {
