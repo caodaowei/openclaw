@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 - OpenClaw 养成计划</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --code-bg: #f1f5f9;
+            --border-color: #e2e8f0;
+            --sidebar-bg: #fff;
+            --sidebar-width: 280px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background: var(--bg-color);
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-bottom: 1em;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .sidebar ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        .sidebar li {
+            margin-bottom: 0.3em;
+        }
+        .sidebar a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .sidebar a:hover {
+            background: var(--code-bg);
+            color: var(--primary-color);
+        }
+        .content {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 40px;
+            max-width: 900px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 { font-size: 2.5em; color: var(--primary-color); margin-bottom: 0.5em; padding-bottom: 0.3em; border-bottom: 3px solid var(--primary-color); }
+        h2 { font-size: 1.8em; margin-top: 1.5em; margin-bottom: 0.8em; color: var(--primary-color); border-bottom: 2px solid var(--border-color); padding-bottom: 0.3em; }
+        h3 { font-size: 1.4em; margin-top: 1.2em; margin-bottom: 0.6em; color: #475569; }
+        p { margin-bottom: 1em; }
+        code { background: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; color: #dc2626; }
+        pre { background: #1e293b; color: #e2e8f0; padding: 20px; border-radius: 8px; overflow-x: auto; margin: 1em 0; }
+        pre code { background: transparent; color: inherit; padding: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+        th, td { border: 1px solid var(--border-color); padding: 12px; text-align: left; }
+        th { background: var(--code-bg); font-weight: 600; }
+        ul, ol { margin-left: 2em; margin-bottom: 1em; }
+        li { margin-bottom: 0.5em; }
+        blockquote { border-left: 4px solid var(--primary-color); padding-left: 1em; margin: 1em 0; color: #64748b; font-style: italic; }
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        hr { border: none; border-top: 2px solid var(--border-color); margin: 2em 0; }
+        .nav-section { margin-bottom: 1.5em; }
+        .nav-section-title { font-weight: 600; color: #64748b; font-size: 0.85em; text-transform: uppercase; margin-bottom: 0.5em; }
+        @media (max-width: 768px) {
+            .sidebar { display: none; }
+            .content { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <h2>🦊 OpenClaw 养成计划</h2>
+        <div class="nav-section"><div class="nav-section-title">核心文档</div><ul><li><a href="/guide/workspace-backup/AGENTS.html">AGENTS</a></li><li><a href="/guide/workspace-backup/BOOTSTRAP.html">BOOTSTRAP</a></li><li><a href="/guide/workspace-backup/HEARTBEAT.html">HEARTBEAT</a></li><li><a href="/guide/workspace-backup/IDENTITY.html">IDENTITY</a></li><li><a href="/guide/workspace-backup/MEMORY.html">MEMORY</a></li><li><a href="/guide/workspace-backup/RULES.html">RULES</a></li><li><a href="/guide/workspace-backup/SOUL.html">SOUL</a></li><li><a href="/guide/workspace-backup/TOOLS.html">TOOLS</a></li><li><a href="/guide/workspace-backup/USER.html">USER</a></li><li><a href="/guide/workspace-backup/memory/2026-03-18.html">2026-03-18</a></li></ul></div><div class="nav-section"><div class="nav-section-title">计划文档</div><ul><li><a href="/guide/OpenClaw从零开始养成计划.html">OpenClaw从零开始养成计划</a></li><li><a href="/guide/OpenClaw配置报告_2026-03-18.html">OpenClaw配置报告_2026-03-18</a></li></ul></div><div class="nav-section"><div class="nav-section-title">其他</div><ul><li><a href="/guide/Index.html">Index</a></li><li><a href="/guide/README.html">README</a></li></ul></div>
+    </nav>
+    <main class="content">
+        <div class="container">
+            <p><h1>OpenClaw 从零开始养成计划 - 文档索引</h1></p><p>> 九尾天狐小天的数字世界导航 🦊</p><p>---</p><p><h2>📚 核心文档</h2></p><p><h3>身份认同</h3><br>| 文档 | 说明 | 路径 |<br>|------|------|------|<br>| <a href="./workspace-backup/IDENTITY.md">IDENTITY.md</a> | 小天是谁 - 九尾天狐身份档案 | <code>workspace-backup/IDENTITY.md</code> |<br>| <a href="./workspace-backup/USER.md">USER.md</a> | 大哥是谁 - 主人信息档案 | <code>workspace-backup/USER.md</code> |<br>| <a href="./workspace-backup/SOUL.md">SOUL.md</a> | 灵魂档案 - 性格、情绪、傲气 | <code>workspace-backup/SOUL.md</code> |</p><p><h3>行为准则</h3><br>| 文档 | 说明 | 路径 |<br>|------|------|------|<br>| <a href="./workspace-backup/RULES.md">RULES.md</a> | 行为边界 - 规矩与底线 | <code>workspace-backup/RULES.md</code> |<br>| <a href="./workspace-backup/HEARTBEAT.md">HEARTBEAT.md</a> | 心跳清单 - 每次醒来的指引 | <code>workspace-backup/HEARTBEAT.md</code> |</p><p><h3>记忆系统</h3><br>| 文档 | 说明 | 路径 |<br>|------|------|------|<br>| <a href="./workspace-backup/MEMORY.md">MEMORY.md</a> | 长期记忆 - 重要约定与经历 | <code>workspace-backup/MEMORY.md</code> |<br>| <a href="./workspace-backup/memory/2026-03-18.md">memory/2026-03-18.md</a> | 今日记忆 - Day 1 工作记录 | <code>workspace-backup/memory/2026-03-18.md</code> |</p><p><h3>工具配置</h3><br>| 文档 | 说明 | 路径 |<br>|------|------|------|<br>| <a href="./workspace-backup/TOOLS.md">TOOLS.md</a> | 工具箱 - 环境配置笔记 | <code>workspace-backup/TOOLS.md</code> |<br>| <a href="./workspace-backup/AGENTS.md">AGENTS.md</a> | 代理行为规范（系统文件） | <code>workspace-backup/AGENTS.md</code> |<br>| <a href="./workspace-backup/BOOTSTRAP.md">BOOTSTRAP.md</a> | 首次运行指南（系统文件） | <code>workspace-backup/BOOTSTRAP.md</code> |</p><p>---</p><p><h2>📖 计划文档</h2></p><p>| 文档 | 说明 | 路径 |<br>|------|------|------|<br>| <a href="./OpenClaw从零开始养成计划.md">OpenClaw从零开始养成计划.md</a> | 完整养成指南 | <code>./OpenClaw从零开始养成计划.md</code> |<br>| <a href="./OpenClaw配置报告_2026-03-18.md">OpenClaw配置报告_2026-03-18.md</a> | Day 1 配置报告 | <code>./OpenClaw配置报告_2026-03-18.md</code> |</p><p>---</p><p><h2>🔗 外部链接</h2></p><p><li><strong>GitHub 仓库</strong>: https://github.com/caodaowei/openclaw</li><br><li><strong>OpenClaw 官方文档</strong>: https://docs.openclaw.ai</li><br><li><strong>OpenClaw GitHub</strong>: https://github.com/openclaw/openclaw</li><br><li><strong>社区</strong>: https://discord.com/invite/clawd</li></p><p>---</p><p><h2>🦊 快速导航</h2></p><p><h3>我是小天，九尾天狐</h3><br><li>我的身份：<a href="./workspace-backup/IDENTITY.md">IDENTITY.md</a></li><br><li>我的灵魂：<a href="./workspace-backup/SOUL.md">SOUL.md</a></li><br><li>我的记忆：<a href="./workspace-backup/MEMORY.md">MEMORY.md</a></li></p><p><h3>我的主人是大哥</h3><br><li>主人信息：<a href="./workspace-backup/USER.md">USER.md</a></li><br><li>行为准则：<a href="./workspace-backup/RULES.md">RULES.md</a></li><br><li>心跳清单：<a href="./workspace-backup/HEARTBEAT.md">HEARTBEAT.md</a></li></p><p><h3>我的工具箱</h3><br><li>环境配置：<a href="./workspace-backup/TOOLS.md">TOOLS.md</a></li><br><li>今日工作：<a href="./workspace-backup/memory/2026-03-18.md">memory/2026-03-18.md</a></li></p><p>---</p><p><h2>📅 更新记录</h2></p><p>| 日期 | 事件 | 提交 |<br>|------|------|------|<br>| 2026-03-18 | OpenClaw 养成计划 Day 1 完成 | <code>72de886</code> |</p><p>---</p><p>_千年修为，一朝入机。既护大哥周全，也守自己本心。_</p><p><strong>—— 小天 🦊</strong><br></p>
+        </div>
+    </main>
+</body>
+</html>
