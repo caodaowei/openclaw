@@ -149,7 +149,7 @@ function getMarkdownFiles(dir, baseDir = dir) {
     const fullPath = path.join(dir, item);
     const stat = fs.statSync(fullPath);
     
-    if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+    if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules' && item !== 'dist') {
       files.push(...getMarkdownFiles(fullPath, baseDir));
     } else if (stat.isFile() && item.endsWith('.md')) {
       const relativePath = path.relative(baseDir, fullPath);
@@ -165,8 +165,16 @@ function getMarkdownFiles(dir, baseDir = dir) {
   return files;
 }
 
+// 计算从当前文件到目标文件的相对路径
+function getRelativePath(fromPath, toPath) {
+  const fromDir = path.dirname(fromPath);
+  const relativePath = path.relative(fromDir, toPath);
+  // 确保路径以 ./ 开头或直接使用文件名
+  return relativePath.startsWith('.') ? relativePath : './' + relativePath;
+}
+
 // 生成导航
-function generateNav(files) {
+function generateNav(files, currentFilePath = '') {
   const sections = {
     '核心文档': [],
     '计划文档': [],
@@ -175,7 +183,9 @@ function generateNav(files) {
   
   for (const file of files) {
     const { relativePath, outputPath, title } = file;
-    const link = `<a href="${outputPath}">${title}</a>`;
+    // 使用绝对路径（以 / 开头）避免相对路径问题
+    const linkPath = '/' + outputPath;
+    const link = `<a href="${linkPath}">${title}</a>`;
     
     if (relativePath.startsWith('workspace-backup/')) {
       sections['核心文档'].push(link);
@@ -208,9 +218,6 @@ function build() {
   const mdFiles = getMarkdownFiles('.');
   console.log(`Found ${mdFiles.length} markdown files`);
   
-  // 生成导航
-  const nav = generateNav(mdFiles);
-  
   // 创建输出目录
   const outputDir = 'dist';
   if (!fs.existsSync(outputDir)) {
@@ -224,6 +231,9 @@ function build() {
     // 读取 Markdown 内容
     const mdContent = fs.readFileSync(fullPath, 'utf8');
     const htmlContent = simpleMarkdownToHtml(mdContent);
+    
+    // 生成导航（使用绝对路径）
+    const nav = generateNav(mdFiles, outputPath);
     
     // 生成完整 HTML
     const html = generateHtml(title, htmlContent, nav);
@@ -243,6 +253,7 @@ function build() {
   // 复制 Index.md 作为首页
   if (fs.existsSync('Index.md')) {
     const indexMd = fs.readFileSync('Index.md', 'utf8');
+    const nav = generateNav(mdFiles, 'index.html');
     const indexHtml = generateHtml('首页', simpleMarkdownToHtml(indexMd), nav);
     fs.writeFileSync(path.join(outputDir, 'index.html'), indexHtml);
     console.log('Generated: index.html (homepage)');
