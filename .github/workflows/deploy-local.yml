@@ -25,7 +25,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: html-output
-        path: index.html
+        path: dist/
 
   deploy-local:
     needs: build
@@ -49,5 +49,6 @@ jobs:
         chmod 600 ~/.ssh/server_key
         ssh-keyscan -H $SERVER_HOST >> ~/.ssh/known_hosts 2>/dev/null
         ssh -i ~/.ssh/server_key $SERVER_USER@$SERVER_HOST "sudo mkdir -p /var/www/guide && sudo chown \$USER:\$USER /var/www/guide"
-        scp -i ~/.ssh/server_key index.html $SERVER_USER@$SERVER_HOST:/var/www/guide/
+        # 使用 rsync 同步整个目录
+        rsync -avz -e "ssh -i ~/.ssh/server_key" . $SERVER_USER@$SERVER_HOST:/var/www/guide/
         echo "Deployed to http://$SERVER_HOST/guide/"

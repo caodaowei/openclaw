@@ -25,7 +25,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: html-output
-        path: index.html
+        path: dist/
 
   deploy:
     needs: build
