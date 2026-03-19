@@ -4,7 +4,61 @@ _小天的工具箱，记录环境特有的配置。_
 
 ## SSH 主机
 
-- [待添加]
+### 已配置主机
+
+| 主机名 | IP/域名 | 用户名 | 端口 | 状态 |
+|--------|---------|--------|------|------|
+| **腾讯OpenClaw** | 43.156.51.119 | root | 22 | ⚠️ 待添加公钥 |
+
+### SSH 配置
+
+**配置文件**: `~/.ssh/config`
+
+```
+Host 腾讯OpenClaw
+    HostName 43.156.51.119
+    User root
+    Port 22
+    IdentityFile ~/.ssh/id_ed25519
+```
+
+### 连接方法
+
+```bash
+# 快速连接
+ssh 腾讯OpenClaw
+
+# 或完整命令
+ssh root@43.156.51.119
+
+# 执行远程命令
+ssh 腾讯OpenClaw "ls -la"
+
+# 复制文件到远程
+scp localfile.txt 腾讯OpenClaw:/root/
+
+# 从远程复制文件
+scp 腾讯OpenClaw:/root/remotefile.txt ./
+```
+
+### 当前问题
+
+⚠️ **需要将公钥添加到腾讯服务器**
+
+**本地公钥**:
+```
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILmI3qtXC4DLPLPLypzecrUjrs2M7Khz9YOd4FQunWooxR user@openclaw.ai
+```
+
+**解决方法**（在腾讯服务器上执行）:
+```bash
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILmI3qtXC4DLPLPLypzecrUjrs2M7Khz9YOd4FQunWooxR user@openclaw.ai" >> ~/.ssh/authorized_keys
+```
+
+或使用密码登录（临时）:
+```bash
+ssh -o PreferredAuthentications=password root@43.156.51.119
+```
 
 ## 常用路径
 
