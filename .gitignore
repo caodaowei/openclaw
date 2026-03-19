@@ -1,0 +1,40 @@
+# OpenClaw 项目 Git 忽略配置
+# 由小天创建 🦊
+
+# 构建产物 - 自动生成，不需要提交
+dist/
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器配置
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 依赖目录
+node_modules/
+
+# 环境变量文件（包含敏感信息）
+.env
+.env.local
+.env.*.local
+
+# 备份文件（已脱敏的除外）
+*.backup
+*.bak
+
+# 通知文件（临时生成）
+/tmp/*.txt
