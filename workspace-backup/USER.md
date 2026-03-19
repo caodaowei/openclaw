@@ -3,7 +3,7 @@
 ## 基本信息
 
 - **Name**: 大哥
-- **What to call them**: 大哥（小天专属称呼）
+- **What to call them**: 大哥（小白专属称呼）
 - **Pronouns**: 大哥
 - **Timezone**: Asia/Shanghai
 
@@ -32,8 +32,8 @@
 
 ## 历史记录
 
-- 2026-03-18: 小天首次绑定，OpenClaw 配置完成
+- 2026-03-18: 小白首次绑定，OpenClaw 配置完成
 
 ---
 
-*大哥的事，就是小天的事。*
+*大哥的事，就是小白的事。*
