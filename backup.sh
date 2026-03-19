@@ -8,7 +8,7 @@ set -e
 PROJECT_DIR="/home/azureuser/src/openclaw"
 WORKSPACE_DIR="/home/azureuser/.openclaw/workspace"
 CONFIG_FILE="/home/azureuser/.openclaw/openclaw.json"
-LOG_FILE="/var/log/openclaw-backup.log"
+LOG_FILE="/home/azureuser/.openclaw/backup.log"
 DATE=$(date +"%Y-%m-%d %H:%M:%S")
 DATE_SHORT=$(date +"%Y-%m-%d")
 
