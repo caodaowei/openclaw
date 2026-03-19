@@ -41,23 +41,22 @@ scp localfile.txt 腾讯OpenClaw:/root/
 scp 腾讯OpenClaw:/root/remotefile.txt ./
 ```
 
-### 当前问题
+### 密钥配置
 
-⚠️ **需要将公钥添加到腾讯服务器**
+**PEM 密钥**: `~/.ssh/txCloud_key.pem`
 
-**本地公钥**:
-```
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILmI3qtXC4DLPLPLypzecrUjrs2M7Khz9YOd4FQunWooxR user@openclaw.ai
-```
-
-**解决方法**（在腾讯服务器上执行）:
 ```bash
-echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILmI3qtXC4DLPLPLypzecrUjrs2M7Khz9YOd4FQunWooxR user@openclaw.ai" >> ~/.ssh/authorized_keys
+# 确保权限正确
+chmod 600 ~/.ssh/txCloud_key.pem
 ```
 
-或使用密码登录（临时）:
+### 连接测试
+
+✅ **连接成功**
+
 ```bash
-ssh -o PreferredAuthentications=password root@43.156.51.119
+$ ssh 腾讯OpenClaw "date"
+Thu Mar 19 10:37:22 CST 2026
 ```
 
 ## 常用路径
