@@ -256,26 +256,30 @@ git status
 | 项目名称 | 路径 | 说明 | 状态 |
 |---------|------|------|------|
 | **openclaw** | `/home/azureuser/src/openclaw` | OpenClaw 从零开始养成计划 | ✅ 活跃 |
-| [项目2] | - | 待添加 | ⬜ |
-| [项目3] | - | 待添加 | ⬜ |
+| **iQuant.Portal** | `/home/azureuser/src/iQuant.Portal` | 量化投资门户 | 🚧 初始化 |
+| **Learning** | `/home/azureuser/src/Learning` | 学习笔记和实验 | 📚 持续学习 |
 
 ### 项目结构
 
 ```
 ~/src/
-└── openclaw/                 # OpenClaw 养成计划 ⭐
-    ├── OpenClaw从零开始养成计划.md
-    ├── OpenClaw配置报告_2026-03-18.md
-    ├── Index.md
-    ├── README.md
-    ├── build.js               # 站点构建
-    ├── backup.sh              # 自动备份 ⭐
-    ├── generate-daily-report.sh  # 报告生成 ⭐
-    ├── combine-notifications.sh  # 通知整合 ⭐
-    ├── workspace-backup/      # 配置备份
-    ├── dailyreport/           # 每日报告
-    ├── dist/                  # 构建产物（.gitignore）
-    └── .github/workflows/     # CI/CD
+├── openclaw/                 # OpenClaw 养成计划 ⭐
+│   ├── OpenClaw从零开始养成计划.md
+│   ├── OpenClaw配置报告_2026-03-18.md
+│   ├── Index.md
+│   ├── README.md
+│   ├── build.js               # 站点构建
+│   ├── backup.sh              # 自动备份 ⭐
+│   ├── generate-daily-report.sh  # 报告生成 ⭐
+│   ├── combine-notifications.sh  # 通知整合 ⭐
+│   ├── workspace-backup/      # 配置备份
+│   ├── dailyreport/           # 每日报告
+│   ├── dist/                  # 构建产物（.gitignore）
+│   └── .github/workflows/     # CI/CD
+├── iQuant.Portal/            # 量化投资门户 🚧
+│   └── README.md
+└── Learning/                 # 学习笔记 📚
+    └── README.md
 ```
 
 ### 常用项目命令
