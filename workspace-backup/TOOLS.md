@@ -256,7 +256,7 @@ git status
 | 项目名称 | 路径 | 说明 | 状态 |
 |---------|------|------|------|
 | **openclaw** | `/home/azureuser/src/openclaw` | OpenClaw 从零开始养成计划 | ✅ 活跃 |
-| **团队沟通平台** | `/home/azureuser/src/openclaw/projects/团队沟通平台` | 团队沟通协作平台 | 🚧 需求确认 |
+| **狐语 FoxChat** | `/home/azureuser/src/foxchat` | 团队沟通协作平台 | 🚧 需求确认 |
 | **iQuant.Portal** | `/home/azureuser/src/iQuant.Portal` | 量化投资门户 | ⏸️ 待启动 |
 | **Learning** | `/home/azureuser/src/Learning` | 学习笔记和实验 | 📚 持续学习 |
 

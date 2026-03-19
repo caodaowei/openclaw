@@ -1,6 +1,7 @@
-# 团队沟通平台
+# 狐语 FoxChat
 
-> OpenClaw 项目交付团队 - 第一个实际项目
+> 团队沟通协作平台
+> Team Communication & Collaboration Platform
 
 ---
 
