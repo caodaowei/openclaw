@@ -249,10 +249,54 @@ git status
 - 修改配置前备份 `openclaw.json`
 - 使用 `config.patch` 而非 `config.apply`
 
+## 项目列表
+
+### GitHub 项目
+
+| 项目名称 | 路径 | 说明 | 状态 |
+|---------|------|------|------|
+| **openclaw** | `/home/azureuser/src/openclaw` | OpenClaw 从零开始养成计划 | ✅ 活跃 |
+| [项目2] | - | 待添加 | ⬜ |
+| [项目3] | - | 待添加 | ⬜ |
+
+### 项目结构
+
+```
+~/src/
+└── openclaw/                 # OpenClaw 养成计划 ⭐
+    ├── OpenClaw从零开始养成计划.md
+    ├── OpenClaw配置报告_2026-03-18.md
+    ├── Index.md
+    ├── README.md
+    ├── build.js               # 站点构建
+    ├── backup.sh              # 自动备份 ⭐
+    ├── generate-daily-report.sh  # 报告生成 ⭐
+    ├── combine-notifications.sh  # 通知整合 ⭐
+    ├── workspace-backup/      # 配置备份
+    ├── dailyreport/           # 每日报告
+    ├── dist/                  # 构建产物（.gitignore）
+    └── .github/workflows/     # CI/CD
+```
+
+### 常用项目命令
+
+```bash
+# 进入 OpenClaw 项目
+cd ~/src/openclaw
+
+# 快速操作
+git status                    # 查看状态
+git pull origin main         # 拉取更新
+git push origin main         # 推送变更
+./backup.sh                  # 手动备份
+./generate-daily-report.sh   # 生成报告
+node build.js                # 构建站点
+```
+
 ## 待添加
 
-- [ ] SSH 主机配置
-- [ ] 具体项目列表
+- [x] SSH 主机配置
+- [x] 具体项目列表
 - [ ] 数据库连接信息
 - [ ] 其他 API 密钥位置
 - [ ] 自定义脚本/别名
