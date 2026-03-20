@@ -93,7 +93,39 @@
       "sandbox": {
         "mode": "off"
       }
-    }
+    },
+    "list": [
+      {
+        "id": "main"
+      },
+      {
+        "id": "xiaohong-agent",
+        "name": "小红-产品经理",
+        "workspace": "/home/azureuser/.openclaw/workspace/agents/小红-产品经理",
+        "agentDir": "/home/azureuser/.openclaw/agents/xiaohong-agent",
+        "identity": {
+          "name": "小红"
+        }
+      },
+      {
+        "id": "xiaohei-agent",
+        "name": "小黑-测试专员",
+        "workspace": "/home/azureuser/.openclaw/workspace/agents/小黑-测试专员",
+        "agentDir": "/home/azureuser/.openclaw/agents/xiaohei-agent",
+        "identity": {
+          "name": "小黑"
+        }
+      },
+      {
+        "id": "xiaoqing-agent",
+        "name": "小青-运维专员",
+        "workspace": "/home/azureuser/.openclaw/workspace/agents/小青-运维专员",
+        "agentDir": "/home/azureuser/.openclaw/agents/xiaoqing-agent",
+        "identity": {
+          "name": "小青"
+        }
+      }
+    ]
   },
   "tools": {
     "profile": "full",
