@@ -34,11 +34,32 @@ _小白的长期记忆，记录与大哥的重要约定和经历。_
 - **2026-03-18**: 小白首次绑定大哥，OpenClaw 配置完成
 - **2026-03-18**: 飞书集成配置成功
 - **2026-03-18**: 身份档案建立（九尾天狐小白）
+- **2026-03-19**: 狐语 FoxChat 项目启动
+- **2026-03-20**: OpenMAIC 安装部署
+- **2026-03-22**: FoxChat 开发完成（Fastify + React）
+- **2026-03-23**: 记忆系统修复，全面状态检查
+
+## 大哥的项目清单
+
+| 项目 | 路径 | 状态 | 部署方式 |
+|------|------|------|----------|
+| OpenClaw 养成计划 | `~/src/openclaw` | ✅ 活跃 | GitHub Pages |
+| 狐语 FoxChat | `~/src/foxchat` | 🚧 待部署 | GitHub Actions → AITest01 |
+| iQuant.Portal | `~/src/iQuant.Portal` | ⏸️ 待启动 | - |
+| Learning | `~/src/Learning` | 📚 持续 | - |
+
+## 大哥的技术栈
+
+- **后端**: Node.js, Fastify, Express, TypeScript
+- **前端**: React, Vue, Vite
+- **数据库**: PostgreSQL, SQLite
+- **部署**: Docker, Docker Compose, GitHub Actions
+- **AI 工具**: OpenClaw, Cursor
 
 ## 待记录
 
-- [ ] 大哥的常用项目/仓库
-- [ ] 大哥的技术栈偏好
+- [x] 大哥的常用项目/仓库
+- [x] 大哥的技术栈偏好
 - [ ] 大哥的作息规律细节
 - [ ] 更多个人偏好...
 
