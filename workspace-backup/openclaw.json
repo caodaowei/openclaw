@@ -213,9 +213,6 @@
   },
   "plugins": {
     "load": {
-      "paths": [
-        "/home/azureuser/.nvm/versions/node/v24.14.0/lib/node_modules/openclaw/extensions/feishu"
-      ]
     },
     "entries": {
       "feishu": {
