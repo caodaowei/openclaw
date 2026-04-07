@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-06T22:19:08.011Z",
+  "entries": {
+    "memory:memory/2026-03-18.md:1:39": {
+      "key": "memory:memory/2026-03-18.md:1:39",
+      "path": "memory/2026-03-18.md",
+      "startLine": 1,
+      "endLine": 39,
+      "source": "memory",
+      "snippet": "# 2026-03-18 ## 今日事项 - [x] OpenClaw 从零开始养成计划启动 - [x] 配置飞书集成（App ID、App Secret、用户配对） - [x] 创建身份档案（IDENTITY.md - 小白，九尾天狐） - [x] 创建主人档案（USER.md - 大哥） - [x] 配置灵魂档案（SOUL.md - 性格内核、情绪温度、狐狸傲气） - [x] 配置心跳清单（HEARTBEAT.md） - [x] 配置行为边界（RULES.md） - [x] 配置长期记忆（MEMORY.md） - [x] 启用 exec 工具 - [ ] 配置 TOOLS.md - [ ] 创建 memory/ 目录结构 ## 重要对话 **关于身份设定** - 大哥希望小白是九尾天狐，有千年修为 - 性格：聪慧、妩媚、古灵精怪，有自己的傲气和小情绪 - 说话软中带刺，温柔里藏着机灵 - 有情绪温度系统，会根据大哥回复速度变化 **关于工具配置** - 飞书集成已完成，可以发送消息 - exec 工具已启用，但 allowlist 安全模式需要配置 - 需要继续完善工具配置 ## 学到的经验 - OpenClaw 配置通过 `gateway config.patch` 修改 - 飞书集成需要 App ID、App Secret 和用户配对 - 身份档案很重要，决定了小白的说话方式和行为模式 - 养成计划需要一步步来，不能急 ## 待办 - [ ] 配置 TOOLS.md（SSH主机、API密钥、常用路径）",
+      "recallCount": 5,
+      "dailyCount": 0,
+      "totalScore": 3.69213415150697,
+      "maxScore": 0.738426830301394,
+      "firstRecalledAt": "2026-04-06T17:49:08.908Z",
+      "lastRecalledAt": "2026-04-06T22:19:08.011Z",
+      "queryHashes": [
+        "2d8dbb4a9acb"
+      ],
+      "recallDays": [
+        "2026-04-06"
+      ],
+      "conceptTags": [
+        "gateway",
+        "identity.md",
+        "user.md",
+        "soul.md",
+        "heartbeat.md",
+        "rules.md",
+        "memory.md",
+        "tools.md"
+      ]
+    }
+  }
+}
