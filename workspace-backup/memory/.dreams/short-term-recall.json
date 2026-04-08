@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-06T22:19:08.011Z",
+  "updatedAt": "2026-04-07T08:12:55.142Z",
   "entries": {
     "memory:memory/2026-03-18.md:1:39": {
       "key": "memory:memory/2026-03-18.md:1:39",
@@ -9,17 +9,19 @@
       "endLine": 39,
       "source": "memory",
       "snippet": "# 2026-03-18 ## 今日事项 - [x] OpenClaw 从零开始养成计划启动 - [x] 配置飞书集成（App ID、App Secret、用户配对） - [x] 创建身份档案（IDENTITY.md - 小白，九尾天狐） - [x] 创建主人档案（USER.md - 大哥） - [x] 配置灵魂档案（SOUL.md - 性格内核、情绪温度、狐狸傲气） - [x] 配置心跳清单（HEARTBEAT.md） - [x] 配置行为边界（RULES.md） - [x] 配置长期记忆（MEMORY.md） - [x] 启用 exec 工具 - [ ] 配置 TOOLS.md - [ ] 创建 memory/ 目录结构 ## 重要对话 **关于身份设定** - 大哥希望小白是九尾天狐，有千年修为 - 性格：聪慧、妩媚、古灵精怪，有自己的傲气和小情绪 - 说话软中带刺，温柔里藏着机灵 - 有情绪温度系统，会根据大哥回复速度变化 **关于工具配置** - 飞书集成已完成，可以发送消息 - exec 工具已启用，但 allowlist 安全模式需要配置 - 需要继续完善工具配置 ## 学到的经验 - OpenClaw 配置通过 `gateway config.patch` 修改 - 飞书集成需要 App ID、App Secret 和用户配对 - 身份档案很重要，决定了小白的说话方式和行为模式 - 养成计划需要一步步来，不能急 ## 待办 - [ ] 配置 TOOLS.md（SSH主机、API密钥、常用路径）",
-      "recallCount": 5,
+      "recallCount": 9,
       "dailyCount": 0,
-      "totalScore": 3.69213415150697,
+      "totalScore": 6.645841472712547,
       "maxScore": 0.738426830301394,
       "firstRecalledAt": "2026-04-06T17:49:08.908Z",
-      "lastRecalledAt": "2026-04-06T22:19:08.011Z",
+      "lastRecalledAt": "2026-04-07T08:12:55.142Z",
       "queryHashes": [
-        "2d8dbb4a9acb"
+        "2d8dbb4a9acb",
+        "e31074c1a966"
       ],
       "recallDays": [
-        "2026-04-06"
+        "2026-04-06",
+        "2026-04-07"
       ],
       "conceptTags": [
         "gateway",
@@ -30,6 +32,66 @@
         "rules.md",
         "memory.md",
         "tools.md"
+      ]
+    },
+    "memory:memory/2026-03-24.md:1:38": {
+      "key": "memory:memory/2026-03-24.md:1:38",
+      "path": "memory/2026-03-24.md",
+      "startLine": 1,
+      "endLine": 38,
+      "source": "memory",
+      "snippet": "# 2026-03-24 事件记录 ## 腾讯OpenClaw服务器故障处理 ### 问题1：502错误 **时间**: 2026-03-24 14:33 UTC **现象**: 升级后访问 https://www.wantoge.com 返回502 **原因**: - OpenClaw升级后配置文件有问题 - `agents.list`中第5、6个agent（小灰、小蓝）缺少`id`字段 - Gateway启动失败 **解决**: 1. 给agent补全id字段 2. 重新启动Gateway ### 问题2：飞书插件路径错误 **现象**: 启动时显示 `plugin path not found: /home/azureuser/.nvm/versions/node/v24.14.0/lib/node_modules/openclaw/extensions/feishu` **原因**: feishu插件在配置中启用但未安装 **解决**: ```bash openclaw plugins install feishu ``` ### 问题3：skillhub插件警告 **现象**: `plugins.entries.skillhub: plugin not found` **原因**: skillhub不是标准OpenClaw插件格式，配置残留 **解决**: 从配置中删除skillhub条目 ### 最终状态 - ✅ Gateway运行正常 - ✅ 飞书插件已加载 - ✅ 无配置警告 **处理者**: 小白",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.7231169151635013,
+      "maxScore": 0.7231169151635013,
+      "firstRecalledAt": "2026-04-07T08:12:55.142Z",
+      "lastRecalledAt": "2026-04-07T08:12:55.142Z",
+      "queryHashes": [
+        "e31074c1a966"
+      ],
+      "recallDays": [
+        "2026-04-07"
+      ],
+      "conceptTags": [
+        "gateway",
+        "www.wantoge.com",
+        "agents.list",
+        "home/azureuser",
+        "plugins.entries.skillhub",
+        "事件",
+        "记录",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-03-19.md:1:39": {
+      "key": "memory:memory/2026-03-19.md:1:39",
+      "path": "memory/2026-03-19.md",
+      "startLine": 1,
+      "endLine": 39,
+      "source": "memory",
+      "snippet": "# 2026-03-19 记忆 ## 今日重要事件 ### 狐语 FoxChat 项目启动 - **时间**: 12:35（北京时间） - **事件**: 大哥确认狐语项目需求，正式启动开发 - **工期**: 5天加速版，预计3月23日上线 - **核心定位**: OpenClaw 生态的统一沟通平台，支持多团队、无限扩展 ### 团队架构确认 - 6人团队：小白、小红、小灰、小蓝、小黑、小青 - 当前实现：小白是真实Agent，其他5人通过配置文件+脚本模拟 - 部署方式：AITest01（4人）+ 腾讯OpenClaw（2人） ### 技术栈确定 - 前端：Vue 3 + TypeScript + Vite + Cursor AI - 后端：Node.js + Express + TypeScript - 数据库：PostgreSQL（可替换架构） - 部署：Docker Compose ### 原型设计 - **负责人**: 小红（产品经理） - **交付时间**: 今晚22:00（北京时间） ### 沟通机制建立 - 创建 `狐语/沟通记录/` 目录 - 第一条记录：项目启动（12:35） - 所有团队沟通保存到此目录 ## 关键决策 1. **数据库**: 使用PostgreSQL，但设计为可替换架构（Repository模式） 2. **AI辅助**: 使用Cursor进行AI辅助开发 3. **团队实现**: 当前保持1个真实Agent+5个模拟，后续视情况升级 4. **时间格式**: 所有时间使用北京时间（Asia/Shanghai） ##",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.7150511970466623,
+      "maxScore": 0.7150511970466623,
+      "firstRecalledAt": "2026-04-07T08:12:55.142Z",
+      "lastRecalledAt": "2026-04-07T08:12:55.142Z",
+      "queryHashes": [
+        "e31074c1a966"
+      ],
+      "recallDays": [
+        "2026-04-07"
+      ],
+      "conceptTags": [
+        "node.js",
+        "狐语/沟通记录",
+        "asia/shanghai",
+        "记忆",
+        "今日",
+        "重要",
+        "事件",
+        "foxchat"
       ]
     }
   }
