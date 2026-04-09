@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-07T08:12:55.142Z",
+  "updatedAt": "2026-04-08T09:27:28.188Z",
   "entries": {
     "memory:memory/2026-03-18.md:1:39": {
       "key": "memory:memory/2026-03-18.md:1:39",
@@ -71,17 +71,19 @@
       "endLine": 39,
       "source": "memory",
       "snippet": "# 2026-03-19 记忆 ## 今日重要事件 ### 狐语 FoxChat 项目启动 - **时间**: 12:35（北京时间） - **事件**: 大哥确认狐语项目需求，正式启动开发 - **工期**: 5天加速版，预计3月23日上线 - **核心定位**: OpenClaw 生态的统一沟通平台，支持多团队、无限扩展 ### 团队架构确认 - 6人团队：小白、小红、小灰、小蓝、小黑、小青 - 当前实现：小白是真实Agent，其他5人通过配置文件+脚本模拟 - 部署方式：AITest01（4人）+ 腾讯OpenClaw（2人） ### 技术栈确定 - 前端：Vue 3 + TypeScript + Vite + Cursor AI - 后端：Node.js + Express + TypeScript - 数据库：PostgreSQL（可替换架构） - 部署：Docker Compose ### 原型设计 - **负责人**: 小红（产品经理） - **交付时间**: 今晚22:00（北京时间） ### 沟通机制建立 - 创建 `狐语/沟通记录/` 目录 - 第一条记录：项目启动（12:35） - 所有团队沟通保存到此目录 ## 关键决策 1. **数据库**: 使用PostgreSQL，但设计为可替换架构（Repository模式） 2. **AI辅助**: 使用Cursor进行AI辅助开发 3. **团队实现**: 当前保持1个真实Agent+5个模拟，后续视情况升级 4. **时间格式**: 所有时间使用北京时间（Asia/Shanghai） ##",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
-      "totalScore": 0.7150511970466623,
+      "totalScore": 1.40657950648723,
       "maxScore": 0.7150511970466623,
       "firstRecalledAt": "2026-04-07T08:12:55.142Z",
-      "lastRecalledAt": "2026-04-07T08:12:55.142Z",
+      "lastRecalledAt": "2026-04-08T09:27:28.188Z",
       "queryHashes": [
-        "e31074c1a966"
+        "e31074c1a966",
+        "b11b0dea6753"
       ],
       "recallDays": [
-        "2026-04-07"
+        "2026-04-07",
+        "2026-04-08"
       ],
       "conceptTags": [
         "node.js",
@@ -92,6 +94,96 @@
         "重要",
         "事件",
         "foxchat"
+      ]
+    },
+    "memory:memory/2026-03-23.md:1:43": {
+      "key": "memory:memory/2026-03-23.md:1:43",
+      "path": "memory/2026-03-23.md",
+      "startLine": 1,
+      "endLine": 43,
+      "source": "memory",
+      "snippet": "# 2026-03-23 完整状态总结 ## 一、Docker 服务状态 | 服务 | 状态 | 说明 | |------|------|------| | Docker Daemon | ⚠️ 无权限 | 当前用户无法访问 docker.sock | | FoxChat | ⏹️ 未运行 | docker-compose 未启动 | | PostgreSQL | ⏹️ 未运行 | 需要本地或容器启动 | **注意**: 需要把当前用户加入 docker 组或 sudo 权限才能管理容器 --- ## 二、项目代码状态 ### 1. OpenClaw 养成计划 (`~/src/openclaw/`) | 项目 | 状态 | |------|------| | GitHub Pages 部署 | ✅ 自动部署 | | 每日报告生成 | ✅ 自动生成并提交 | | 备份脚本 | ✅ `backup.sh` 可用 | | 最新提交 | `c30a13b` 每日报告: 2026-03-22 | **部署**: GitHub Actions → GitHub Pages --- ### 2. 狐语 FoxChat (`~/src/foxchat/`) | 模块 | 状态 | 备注 | |------|------|------| | 后端框架 | ✅ Fastify + TypeScript | 已从 Express 迁移 | | 数据库 | ✅ Drizzle ORM + PostgreSQL | 迁移脚本就绪 | | API 完整度 | ✅ 用户/团队/沟通 CRU",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.7705636308405145,
+      "maxScore": 0.7705636308405145,
+      "firstRecalledAt": "2026-04-08T09:27:28.188Z",
+      "lastRecalledAt": "2026-04-08T09:27:28.188Z",
+      "queryHashes": [
+        "b11b0dea6753"
+      ],
+      "recallDays": [
+        "2026-04-08"
+      ],
+      "conceptTags": [
+        "backup",
+        "备份",
+        "docker.sock",
+        "docker-compose",
+        "src/openclaw",
+        "backup.sh",
+        "src/foxchat",
+        "用户/团队/沟通"
+      ]
+    },
+    "memory:memory/2026-03-23.md:36:92": {
+      "key": "memory:memory/2026-03-23.md:36:92",
+      "path": "memory/2026-03-23.md",
+      "startLine": 36,
+      "endLine": 92,
+      "source": "memory",
+      "snippet": "| 前端页面 | ✅ React + Vite | 5个页面完成 | | Docker 配置 | ✅ docker-compose.yml | 待启动 | | GitHub Actions | ✅ 自动部署到 AITest01 | `eb864b0` | | 未提交变更 | ⚠️ 大量 | backend 重构中 | **部署**: GitHub Actions → SSH 到 AITest01 → docker-compose **待办**: - [ ] 提交 backend 重构代码 - [ ] 启动本地 PostgreSQL - [ ] 本地测试运行 - [ ] 生产部署 --- ### 3. iQuant.Portal (`~/src/iQuant.Portal/`) | 项目 | 状态 | |------|------| | 初始化 | ✅ 仅 README | | 最新提交 | `35a5eb0` Initial commit | | 状态 | ⏸️ 待启动 | --- ### 4. Learning (`~/src/Learning/`) | 项目 | 状态 | |------|------| | 初始化 | ✅ 仅 README | | 最新提交 | `a40794c` Initial commit | | 状态 | 📚 持续学习 | --- ## 三、OpenClaw 系统状态 | 组件 | 状态 | |------|------| | Gateway 进程 | ✅ 运行中 (PID: 420238, 592870) | | 飞书集成 |",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.7616207197593208,
+      "maxScore": 0.7616207197593208,
+      "firstRecalledAt": "2026-04-08T09:27:28.188Z",
+      "lastRecalledAt": "2026-04-08T09:27:28.188Z",
+      "queryHashes": [
+        "b11b0dea6753"
+      ],
+      "recallDays": [
+        "2026-04-08"
+      ],
+      "conceptTags": [
+        "gateway",
+        "docker-compose.yml",
+        "docker-compose",
+        "iquant.portal",
+        "src/iquant.portal",
+        "src/learning",
+        "前端",
+        "react"
+      ]
+    },
+    "memory:memory/2026-03-23.md:84:125": {
+      "key": "memory:memory/2026-03-23.md:84:125",
+      "path": "memory/2026-03-23.md",
+      "startLine": 84,
+      "endLine": 125,
+      "source": "memory",
+      "snippet": "| 3/18 | OpenClaw 配置完成，小白首次绑定 | | 3/19 | FoxChat 项目启动，团队组建 | | 3/20 | OpenMAIC 安装，域名配置 | | 3/21 | FoxChat 后端迁移到 Fastify | | 3/22 | FoxChat 前端完成，GitHub Actions 部署配置 | | 3/23 | 记忆系统修复，状态全面检查 | --- ## 五、待办事项汇总 ### 高优先级 - [ ] FoxChat 提交重构代码并部署 - [ ] 修复 Docker 权限问题 - [ ] 启动 PostgreSQL 并测试 ### 中优先级 - [ ] iQuant.Portal 项目启动 - [ ] OpenClaw 配置文档完善 ### 日常 - [ ] 每日报告生成 - [ ] 自动备份检查 ### 端口规划更新 - **7001-7799**: 自研生产应用（FoxChat 7001/7002） - **7801-7999**: 非自研服务（PostgreSQL 7801，OpenMAIC 7901） - 文档已更新：`docs/PORT_ALLOCATION.md` ### OpenMAIC 端口调整 - 从 3000 调整到 7901 - 配置路径：`/home/azureuser/tools/OpenMAIC/docker-compose.yml` ### Docker 部署清单整理 - 文档：`~/src/openclaw/docs/DOCKER_DEPLOYMENT.md` - 4个运行容器：FoxCha",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.7054341623541381,
+      "maxScore": 0.7054341623541381,
+      "firstRecalledAt": "2026-04-08T09:27:28.188Z",
+      "lastRecalledAt": "2026-04-08T09:27:28.188Z",
+      "queryHashes": [
+        "b11b0dea6753"
+      ],
+      "recallDays": [
+        "2026-04-08"
+      ],
+      "conceptTags": [
+        "备份",
+        "3/18",
+        "3/19",
+        "3/20",
+        "3/21",
+        "3/22",
+        "3/23",
+        "iquant.portal"
       ]
     }
   }
