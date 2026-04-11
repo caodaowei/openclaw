@@ -99,6 +99,16 @@
         "id": "main"
       },
       {
+        "id": "hermes",
+        "name": "Hermes-Agent",
+        "workspace": "/home/azureuser/.openclaw/workspace",
+        "agentDir": "/home/azureuser/.openclaw/agents/hermes",
+        "identity": {
+          "name": "Hermes"
+        },
+        "model": "moonshot/kimi-k2.5"
+      },
+      {
         "id": "xiaohong-agent",
         "name": "小红-产品经理",
         "workspace": "/home/azureuser/.openclaw/workspace/agents/小红-产品经理",
