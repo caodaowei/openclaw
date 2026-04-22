@@ -67,7 +67,7 @@ Thu Mar 19 10:37:22 CST 2026
 - **项目代码**: `/home/azureuser/src`
 - **OpenClaw 养成计划**: `/home/azureuser/src/openclaw`
 - **配置备份**: `/home/azureuser/src/openclaw/workspace-backup`
-- **备份日志**: `/var/log/openclaw-backup.log`
+- **备份日志**: `/home/azureuser/.openclaw/backup.log`
 
 ## Git 仓库
 
@@ -125,10 +125,10 @@ chmod +x /home/azureuser/src/openclaw/backup.sh
 crontab -e
 
 # 添加以下行（每天凌晨 2:00 执行备份）
-0 2 * * * /home/azureuser/src/openclaw/backup.sh >> /var/log/openclaw-backup.log 2>&1
+0 2 * * * /home/azureuser/src/openclaw/backup.sh >> /home/azureuser/.openclaw/backup.log 2>&1
 
 # 或者每 6 小时备份一次
-0 */6 * * * /home/azureuser/src/openclaw/backup.sh >> /var/log/openclaw-backup.log 2>&1
+0 */6 * * * /home/azureuser/src/openclaw/backup.sh >> /home/azureuser/.openclaw/backup.log 2>&1
 ```
 
 #### 步骤 3：验证 Cron 设置
@@ -137,7 +137,7 @@ crontab -e
 crontab -l
 
 # 查看备份日志
-tail -f /var/log/openclaw-backup.log
+tail -f /home/azureuser/.openclaw/backup.log
 ```
 
 ### 飞书通知设置
@@ -186,7 +186,7 @@ git push origin main
 
 ```bash
 # 查看最近备份日志
-tail -50 /var/log/openclaw-backup.log
+tail -50 /home/azureuser/.openclaw/backup.log
 
 # 查看 Git 提交历史
 cd /home/azureuser/src/openclaw
