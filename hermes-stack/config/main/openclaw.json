@@ -1,0 +1,380 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.5.7",
+    "lastTouchedAt": "2026-05-08T13:34:37.390Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-05-07T09:49:16.011Z",
+    "lastRunVersion": "2026.5.6",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "moonshot:default": {
+        "provider": "moonshot",
+        "mode": "api_key"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "moonshot": {
+        "baseUrl": "https://api.moonshot.cn/v1",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi K2.5",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 256000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "aihub": {
+        "baseUrl": "https://ai-apihub.itinfolab.cn/v1",
+        "apiKey": "sk-8gGnjNsqdioFLtRRnAG7gg5Dlg0KZmrESL98KmYBhYjoONAN-38",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "claude-sonnet-4-6",
+            "name": "Claude Sonnet 4.6",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 4096
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "moonshot/kimi-k2.5"
+      },
+      "models": {
+        "moonshot/kimi-k2.5": {
+          "alias": "Kimi"
+        },
+        "aihub/claude-sonnet-4-6": {
+          "alias": "Claude"
+        }
+      },
+      "workspace": "/home/azureuser/.openclaw/workspace",
+      "blockStreamingDefault": "on",
+      "typingMode": "message",
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      },
+      "sandbox": {
+        "mode": "off"
+      }
+    },
+    "list": [
+      {
+        "id": "main"
+      },
+      {
+        "id": "hermes",
+        "name": "Hermes-Agent",
+        "workspace": "/home/azureuser/.openclaw/workspace",
+        "agentDir": "/home/azureuser/.openclaw/agents/hermes",
+        "identity": {
+          "name": "Hermes"
+        },
+        "model": "moonshot/kimi-k2.5"
+      },
+      {
+        "id": "xiaohong-agent",
+        "name": "小红-产品经理",
+        "workspace": "/home/azureuser/.openclaw/workspace/agents/小红-产品经理",
+        "agentDir": "/home/azureuser/.openclaw/agents/xiaohong-agent",
+        "identity": {
+          "name": "小红"
+        }
+      },
+      {
+        "id": "xiaohei-agent",
+        "name": "小黑-测试专员",
+        "workspace": "/home/azureuser/.openclaw/workspace/agents/小黑-测试专员",
+        "agentDir": "/home/azureuser/.openclaw/agents/xiaohei-agent",
+        "identity": {
+          "name": "小黑"
+        }
+      },
+      {
+        "id": "xiaoqing-agent",
+        "name": "小青-运维专员",
+        "workspace": "/home/azureuser/.openclaw/workspace/agents/小青-运维专员",
+        "agentDir": "/home/azureuser/.openclaw/agents/xiaoqing-agent",
+        "identity": {
+          "name": "小青"
+        }
+      }
+    ]
+  },
+  "tools": {
+    "profile": "full",
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "kimi"
+      }
+    },
+    "exec": {
+      "host": "gateway",
+      "security": "full",
+      "ask": "off"
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw",
+    "ownerAllowFrom": [
+      "feishu:ou_0e8c4d0568dc8206ab1a2d5c3f8c69e9"
+    ]
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_a930c774a3b95bc8",
+      "appSecret": "DRONOYRcSloFSZzZ9X6ZhbCbhd5C7nyq",
+      "connectionMode": "websocket",
+      "domain": "feishu",
+      "groupPolicy": "allowlist",
+      "groupAllowFrom": [
+        "oc_0bed749388979a695c47d5852b239e7d"
+      ]
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "lan",
+    "controlUi": {
+      "allowedOrigins": [
+        "http://localhost:18789",
+        "http://127.0.0.1:18789",
+        "http://aitest01.eastus2.cloudapp.azure.com",
+        "https://aitest01.eastus2.cloudapp.azure.com"
+      ]
+    },
+    "auth": {
+      "mode": "token",
+      "token": "6337a60f34322d33d3161a3304ce01006e25e9a74768ffd0"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "remote": {
+      "url": "https://aitest01.eastus2.cloudapp.azure.com"
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send"
+      ]
+    }
+  },
+  "plugins": {
+    "load": {},
+    "entries": {
+      "feishu": {
+        "enabled": true,
+        "config": {}
+      },
+      "moonshot": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "sk-kejm9DQewkImEeGnV5KjAAxglEsAmiOR5J8q6pz6TUQb5EBh"
+          }
+        }
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions",
+    "groupChat": {
+      "visibleReplies": "message_tool"
+    }
+  },
+  "skills": {
+    "entries": {
+      "1password": {
+        "enabled": false
+      },
+      "apple-notes": {
+        "enabled": false
+      },
+      "apple-reminders": {
+        "enabled": false
+      },
+      "bear-notes": {
+        "enabled": false
+      },
+      "blogwatcher": {
+        "enabled": false
+      },
+      "blucli": {
+        "enabled": false
+      },
+      "bluebubbles": {
+        "enabled": false
+      },
+      "camsnap": {
+        "enabled": false
+      },
+      "clawhub": {
+        "enabled": false
+      },
+      "coding-agent": {
+        "enabled": false
+      },
+      "discord": {
+        "enabled": false
+      },
+      "eightctl": {
+        "enabled": false
+      },
+      "gemini": {
+        "enabled": false
+      },
+      "gh-issues": {
+        "enabled": false
+      },
+      "gifgrep": {
+        "enabled": false
+      },
+      "github": {
+        "enabled": false
+      },
+      "gog": {
+        "enabled": false
+      },
+      "goplaces": {
+        "enabled": false
+      },
+      "himalaya": {
+        "enabled": false
+      },
+      "imsg": {
+        "enabled": false
+      },
+      "mcporter": {
+        "enabled": false
+      },
+      "model-usage": {
+        "enabled": false
+      },
+      "nano-pdf": {
+        "enabled": false
+      },
+      "notion": {
+        "enabled": false
+      },
+      "obsidian": {
+        "enabled": false
+      },
+      "openai-whisper": {
+        "enabled": false
+      },
+      "openai-whisper-api": {
+        "enabled": false
+      },
+      "openhue": {
+        "enabled": false
+      },
+      "oracle": {
+        "enabled": false
+      },
+      "ordercli": {
+        "enabled": false
+      },
+      "peekaboo": {
+        "enabled": false
+      },
+      "sag": {
+        "enabled": false
+      },
+      "sherpa-onnx-tts": {
+        "enabled": false
+      },
+      "slack": {
+        "enabled": false
+      },
+      "songsee": {
+        "enabled": false
+      },
+      "sonoscli": {
+        "enabled": false
+      },
+      "spotify-player": {
+        "enabled": false
+      },
+      "summarize": {
+        "enabled": false
+      },
+      "things-mac": {
+        "enabled": false
+      },
+      "trello": {
+        "enabled": false
+      },
+      "voice-call": {
+        "enabled": false
+      },
+      "wacli": {
+        "enabled": false
+      },
+      "xurl": {
+        "enabled": false
+      }
+    }
+  }
+}

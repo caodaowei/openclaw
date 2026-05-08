@@ -1,0 +1,41 @@
+{
+  "port": 80,
+  "baseURL": "",
+  "address": "",
+  "log": "stdout",
+  "database": "/database.db",
+  "root": "/srv",
+  "auth": {
+    "method": "json",
+    "signup": false
+  },
+  "defaults": {
+    "scope": ".",
+    "locale": "zh-cn",
+    "viewMode": "list",
+    "singleClick": false,
+    "sorting": {
+      "by": "name",
+      "asc": false
+    },
+    "perm": {
+      "admin": true,
+      "execute": true,
+      "create": true,
+      "rename": true,
+      "modify": true,
+      "delete": true,
+      "share": true,
+      "download": true
+    }
+  },
+  "users": [
+    {
+      "username": "admin",
+      "password": "$2a$10$N9qo8uLOickgx2ZMRZoMy.MqrqQzBZN0UfGNEsKYGs5qC0Jd4S.qG",
+      "scope": ".",
+      "locale": "zh-cn",
+      "viewMode": "list"
+    }
+  ]
+}

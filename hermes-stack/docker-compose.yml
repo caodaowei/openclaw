@@ -1,0 +1,27 @@
+services:
+  # ============================================
+  # Obsidian Vault - 笔记存储 (核心容器服务)
+  # ============================================
+  obsidian-vault:
+    image: filebrowser/filebrowser:v2
+    container_name: obsidian-vault
+    restart: unless-stopped
+    user: "0:0"
+    ports:
+      - "127.0.0.1:${VAULT_PORT:-8080}:80"
+    volumes:
+      - ./data/vault:/srv
+      - vault-data:/database
+      - ./scripts/init-fb.sh:/init-fb.sh:ro
+    environment:
+      - TZ=Asia/Shanghai
+    entrypoint: ["/init-fb.sh"]
+    networks:
+      - openclaw-net
+
+volumes:
+  vault-data:
+
+networks:
+  openclaw-net:
+    driver: bridge

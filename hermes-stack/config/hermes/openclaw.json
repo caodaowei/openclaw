@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.5.7",
+    "lastTouchedAt": "2026-05-08T14:00:00.000Z"
+  },
+  "auth": {
+    "profiles": {
+      "moonshot:default": {
+        "provider": "moonshot",
+        "mode": "api_key"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "moonshot": {
+        "baseUrl": "https://api.moonshot.cn/v1",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi K2.5",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": ["text", "image"],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 256000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "moonshot/kimi-k2.5"
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "blockStreamingDefault": "on",
+      "typingMode": "message",
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      },
+      "sandbox": {
+        "mode": "off"
+      }
+    },
+    "list": [
+      {
+        "id": "hermes",
+        "name": "Hermes-Agent",
+        "identity": {
+          "name": "Hermes"
+        },
+        "model": "moonshot/kimi-k2.5"
+      }
+    ]
+  },
+  "tools": {
+    "profile": "full",
+    "exec": {
+      "host": "gateway",
+      "security": "full",
+      "ask": "off"
+    },
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "kimi"
+      }
+    }
+  },
+  "skills": {
+    "entries": {
+      "autocli": {
+        "enabled": true
+      },
+      "obsidian": {
+        "enabled": true,
+        "config": {
+          "vaultPath": "/root/.openclaw/workspace/vault",
+          "dailyNotesFolder": "Daily",
+          "templatesFolder": "Templates"
+        }
+      }
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "port": 18789,
+    "bind": "lan",
+    "auth": {
+      "mode": "token",
+      "token": "${GATEWAY_TOKEN}"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "feishu": {
+        "enabled": false
+      },
+      "moonshot": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "${MOONSHOT_API_KEY}"
+          }
+        }
+      }
+    }
+  }
+}
