@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.5.6",
-    "lastTouchedAt": "2026-05-07T09:49:16.107Z"
+    "lastTouchedVersion": "2026.5.7",
+    "lastTouchedAt": "2026-05-08T13:34:37.390Z"
   },
   "wizard": {
     "lastRunAt": "2026-05-07T09:49:16.011Z",
@@ -155,7 +155,10 @@
     "native": "auto",
     "nativeSkills": "auto",
     "restart": true,
-    "ownerDisplay": "raw"
+    "ownerDisplay": "raw",
+    "ownerAllowFrom": [
+      "feishu:ou_0e8c4d0568dc8206ab1a2d5c3f8c69e9"
+    ]
   },
   "session": {
     "dmScope": "per-channel-peer"
